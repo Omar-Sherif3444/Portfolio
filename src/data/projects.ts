@@ -1,16 +1,34 @@
 export interface Project {
-  slug: 'eyt-cinema' | 'dokan-shop'
+  slug: 'ahmed-ramdan-barbershop' | 'eyt-cinema' | 'dokan-shop'
   name: string
   tagline: string
   description: string
   techStack: string[]
   features: string[]
-  github: string
+  /** Omitted for client work whose code is private. */
+  github?: string
   live?: string
   featured: boolean
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'ahmed-ramdan-barbershop',
+    name: 'Ahmed Ramdan Barber Shop — Live Booking System',
+    tagline: 'Production full-stack app for a real client · React & Supabase',
+    description:
+      'A live seating board and management system for a real barbershop with a 3-seat waiting sofa and 4 barber chairs. Customers check on their phone whether a chair is free before walking in and can book a sofa seat online; barbers check customers in with one tap; the owner tracks revenue, visits, and each barber\'s share — all synced in real time across every device.',
+    techStack: ['React', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Three.js', 'Vercel'],
+    features: [
+      'Interactive Three.js 3D shop floor whose chairs change colour with each seat\'s live status, updated on every device instantly via Supabase Realtime',
+      'Online sofa reservations for signed-in customers — one booking per customer, freed automatically after one hour by a scheduled database job',
+      'Three roles from a single sign-in (owner, staff, customer) secured with row-level security; every write goes through role-checked SQL functions, never direct table access',
+      'Owner dashboard with revenue and visit KPIs, 3D charts, per-barber performance reports, and CSV exports',
+      'Arabic-first right-to-left interface with a one-click English switch, fully responsive from phones to desktops',
+    ],
+    live: 'https://ahmed-ramdan-barbershop.vercel.app',
+    featured: true,
+  },
   {
     slug: 'eyt-cinema',
     name: 'EYT — Cinema Booking System',

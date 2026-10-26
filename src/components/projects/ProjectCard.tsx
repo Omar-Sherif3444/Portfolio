@@ -64,15 +64,17 @@ export function ProjectCard({ project, illustration, url, reverse = false }: Pro
           </div>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-2/60 hover:text-accent-2"
-            >
-              <GithubIcon size={16} />
-              View Code
-            </a>
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-medium text-text transition-colors hover:border-accent-2/60 hover:text-accent-2"
+              >
+                <GithubIcon size={16} />
+                View Code
+              </a>
+            )}
             {project.live && (
               <a
                 href={project.live}
